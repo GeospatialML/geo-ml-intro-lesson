@@ -129,7 +129,7 @@ Deep learning is a subset of machine learning that uses neural networks with
 multiple layers. These networks are capable of learning complex patterns and
 representations from large amounts of data.
 
-
+![nn.jpg](fig/e02/nn.jpg){alt="Neural network"}
 
 Neural networks consist of interconnected layers of nodes (neurons) that process
 input data through weighted connections and activation functions.
