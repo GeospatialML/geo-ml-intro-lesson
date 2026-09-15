@@ -219,6 +219,11 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#machine-learning">Machine learning</a></li>
+<li><a href="#machine-learning-family-tree">Machine learning family tree</a></li>
+<li><a href="#supervised-and-unsupervised-learning">Supervised and unsupervised learning</a></li>
+<li><a href="#machine-learning-tasks">Machine learning tasks</a></li>
+<li><a href="#deep-learning">Deep learning</a></li>
+<li><a href="#geospatial-machine-learning">Geospatial machine learning</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -310,16 +315,16 @@
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/01-geospatial-data-intro.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Introduction to
+          Previous: Introduction to geospatial data and...
         </a>
         <a class="chapter-link float-end" href="../instructor/03-data-preparation.html" rel="next">
-          Next: Prepare geospatial...
+          Next: Prepare geospatial data for machine...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Machine learning concepts for geospatial data</h1>
-        <p>Last updated on 2026-08-11 |
+        <p>Last updated on 2026-09-15 |
 
         <a href="https://geospatialml.github.io/geo-ml-intro-lesson/edit/main/episodes/02-ml-concepts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -379,7 +384,7 @@ written as:</p>
 w_n x_n\)</span></p>
 <p>Where <span class="math inline">\(w\)</span> are the model
 parameters, <span class="math inline">\(x\)</span> are the input
-variables. We can adjust the model parameters <span class="math inline">\(w\)</span> to improve how well the model can
+variables or “data matrix”. We can adjust the model parameters <span class="math inline">\(w\)</span> to improve how well the model can
 produce the output variable from the input variables. Therefore, we are
 interested in the difference between the predicted value <span class="math inline">\(\hat{y}\)</span> and the true value <span class="math inline">\(y\)</span>. This is called the “error”, and we can
 write its magnitude as:</p>
@@ -391,12 +396,159 @@ find the best model parameters that minimize the error. This is called
 “fitting” the model to the data. In other words, the model “learns” from
 the data by adjusting its parameters to minimize the error. When we find
 the best model parameters that minimize the error, we can use the model
-to make predictions (or inferences) on new data.</p>
+to make predictions (or inferences) on new data. Whether the predictions
+are useful depends on the training data, evaluation metrics, and the
+generalization ability of the model.</p>
 <p>The whole process of training a model, defining optimization
 algorithms, and using the model to make predictions is called <a href="https://en.wikipedia.org/wiki/Machine_learning" class="external-link">machine learning
-(ML)</a> and it is a subset of artificial intelligence (AI): all machine
-learning is AI, but not all AI is machine learning.</p>
-<p>Geospatial ML is the application of machine learning techniques to
+(ML)</a>.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Data matrix</p>
+<p>A data matrix is a structured representation of data where rows
+typically correspond to individual samples or observations, and columns
+correspond to features or variables. In the context of machine learning,
+the data matrix is used as input to train models and make
+predictions.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="machine-learning-family-tree">Machine learning family tree<a class="anchor" aria-label="anchor" href="#machine-learning-family-tree"></a></h2>
+<hr class="half-width"><p>Machine learning (ML) is a subset of artificial intelligence (AI).
+Artificial intelligence (AI) is the capability of a machine or software
+system to perform tasks that would normally require human intelligence,
+such as learning from data, recognising patterns, making decisions, or
+generating outputs.</p>
+<p>AI research began with rule-based approaches focused on logic.
+Rule-based systems are deterministic, in other words the same inputs
+always lead to the same outputs, and the rules governing behaviour are
+explicitly defined.</p>
+<p>AI research then moves toward statistical and data-driven methods.
+Rather than following fixed rules, these systems use statistical models
+to learn patterns from data and make predictions, classifications or
+risk estimates.</p>
+<p>Deep learning is a subset of machine learning that uses neural
+networks with many layers to learn representations of data. Neural
+networks are composed of interconnected layers of nodes (neurons) that
+transform input data into meaningful output through learned weights and
+activation functions.</p>
+<figure><img src="../fig/e02/AI_tree.jpg" alt="AI family tree" class="figure mx-auto d-block"><div class="figcaption">AI family tree</div>
+</figure></section><section><h2 class="section-heading" id="supervised-and-unsupervised-learning">Supervised and unsupervised learning<a class="anchor" aria-label="anchor" href="#supervised-and-unsupervised-learning"></a></h2>
+<hr class="half-width"><p>Supervised machine learning involves the use of labelled datasets (or
+annotated datasets) to train models. Unsupervised machine learning, on
+the other hand, attempts to identify meaningful patterns within
+unlabelled datasets.</p>
+<figure><img src="../fig/e02/supervised_unsupervised.jpg" alt="Supervised and unsupervised learning" class="figure mx-auto d-block"><div class="figcaption">supervised_unsupervised.jpg</div>
+</figure><div id="challenge-1-supervised-or-unsupervised-learning" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-supervised-or-unsupervised-learning" class="callout-inner">
+<h3 class="callout-title">Challenge 1: supervised or unsupervised
+learning?</h3>
+<div class="callout-content">
+<p>Look at <a href="index.html#setup">the dataset</a> we will be using in this
+lesson. We want to … (FIXME)</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Answer
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="machine-learning-tasks">Machine learning tasks<a class="anchor" aria-label="anchor" href="#machine-learning-tasks"></a></h2>
+<hr class="half-width"><p>Machine learning tasks can be broadly categorized into several types,
+including:</p>
+<ul><li>
+<strong>Regression:</strong> Predicting a continuous numerical value
+based on input features.</li>
+<li>
+<strong>Classification:</strong> Assigning input data to one of
+several predefined categories.</li>
+<li>
+<strong>Clustering:</strong> Grouping similar data points together
+without predefined labels.</li>
+<li>
+<strong>Dimensionality Reduction:</strong> Reducing the number of
+input features while preserving important information.</li>
+<li>
+<strong>Anomaly Detection:</strong> Identifying unusual or rare data
+points that deviate from the norm.</li>
+</ul><figure><img src="../fig/e02/ML_tasks.jpg" alt="Machine learning tasks" class="figure mx-auto d-block"><div class="figcaption">ML_tasks.jpg</div>
+</figure></section><section><h2 class="section-heading" id="deep-learning">Deep learning<a class="anchor" aria-label="anchor" href="#deep-learning"></a></h2>
+<hr class="half-width"><p>Deep learning is a subset of machine learning that uses neural
+networks with multiple layers. These networks are capable of learning
+complex patterns and representations from large amounts of data.</p>
+<figure><img src="../fig/e02/nn.jpg" alt="Neural network" class="figure mx-auto d-block"><div class="figcaption">nn.jpg</div>
+</figure><p>Neural networks consist of interconnected layers of nodes (neurons)
+that process input data through weighted connections and activation
+functions.</p>
+<p>Each neuron … - has one or more inputs, - most of the time, conducts
+3 main operations: - take the weighted sum of the inputs - add a bias
+term (i.e., constant weight) - apply an “activation function” to the
+result; an activation function converts the weighted sum of the inputs
+to the output signal of the neuron. - produce an output that is passed
+to the next layer of neurons.</p>
+<div id="challenge-2-activation-functions" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-activation-functions" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Activation functions</h3>
+<div class="callout-content">
+<p><a href="https://carpentries-lab.github.io/deep-learning-intro/1-introduction.html#what-is-deep-learning" class="external-link uri">https://carpentries-lab.github.io/deep-learning-intro/1-introduction.html#what-is-deep-learning</a>
+(FIXME)</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Answer
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="model-parameters">Model parameters<a class="anchor" aria-label="anchor" href="#model-parameters"></a></h3>
+<p>During training, the neural network adjusts the weights and biases of
+the connections between neurons to minimize the error between the
+predicted output and the true output. The weights and biases are the
+model’s parameters; when you read about, for example a model having 1
+million parameters, it means that the model has 1 million weights and
+biases that can be adjusted during training.</p>
+</div>
+<div class="section level3">
+<h3 id="optimization-algorithms">Optimization algorithms<a class="anchor" aria-label="anchor" href="#optimization-algorithms"></a></h3>
+</div>
+<div class="section level3">
+<h3 id="types-of-deep-learning-models">Types of deep learning models<a class="anchor" aria-label="anchor" href="#types-of-deep-learning-models"></a></h3>
+</div>
+</section><section><h2 class="section-heading" id="geospatial-machine-learning">Geospatial machine learning<a class="anchor" aria-label="anchor" href="#geospatial-machine-learning"></a></h2>
+<hr class="half-width"><p>Geospatial ML is the application of machine learning techniques to
 data with a spatial and spatio-temporal components.</p>
 <p>Machine learning is a powerful tool for geospatial analytics because
 it can leverage large amounts of spatial data, time series data,
@@ -430,10 +582,10 @@ any links that you are not going to use.
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/01-geospatial-data-intro.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: Introduction to
+          Previous: Introduction to geospatial data and...
         </a>
         <a class="chapter-link float-end" href="../instructor/03-data-preparation.html" rel="next">
-          Next: Prepare geospatial...
+          Next: Prepare geospatial data for machine...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -459,7 +611,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.2)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -481,8 +633,8 @@ any links that you are not going to use.
   "url": "https://geo-ml-intro-lesson.github.io/NA/instructor/02-ml-concepts.html",
   "identifier": "https://geo-ml-intro-lesson.github.io/NA/instructor/02-ml-concepts.html",
   "dateCreated": "2026-07-10",
-  "dateModified": "2026-08-11",
-  "datePublished": "2026-08-25"
+  "dateModified": "2026-09-15",
+  "datePublished": "2026-09-15"
 }
 
   </script><script>
